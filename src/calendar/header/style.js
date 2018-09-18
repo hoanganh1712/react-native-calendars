@@ -24,6 +24,10 @@ export default function(theme = {}) {
       padding: 10,
       paddingHorizontal: 20
     },
+    arrowRight: {
+      padding: 10,
+      paddingLeft: 20
+    },
     arrowImage: {
       ...Platform.select({
         ios: {

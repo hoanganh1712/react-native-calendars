@@ -103,7 +103,7 @@ class CalendarHeader extends Component {
       rightArrow = (
         <TouchableOpacity
           onPress={this.onPressRight}
-          style={this.style.arrow}
+          style={this.style.arrowRight}
           hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }}
           testID={CHANGE_MONTH_RIGHT_ARROW}
         >
