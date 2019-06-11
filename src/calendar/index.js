@@ -74,7 +74,7 @@ class Calendar extends Component {
     // Handler which gets executed when press arrow icon left. It receive a callback can go next month
     onPressArrowRight: PropTypes.func,
     styleDayPeriod: PropTypes.any,
-    stylePeriods: PropTypes.any
+    stylePeriod: PropTypes.any
   };
 
   constructor(props) {
@@ -204,7 +204,7 @@ class Calendar extends Component {
           onLongPress={this.longPressDay}
           date={xdateToData(day)}
           marking={this.getDateMarking(day)}
-          stylePeriods={this.props.stylePeriods}
+          stylePeriod={this.props.stylePeriod}
           styleDayPeriod={this.props.styleDayPeriod}
         >
           {date}

@@ -15,7 +15,7 @@ class Day extends Component {
     marking: PropTypes.any,
     onPress: PropTypes.func,
     date: PropTypes.object,
-    stylePeriods: PropTypes.any,
+    stylePeriod: PropTypes.any,
     styleDayPeriod: PropTypes.any
   };
 
@@ -43,7 +43,7 @@ class Day extends Component {
     const baseDotStyle = [
       this.style.dot,
       this.style.visibleDot,
-      this.props.stylePeriods
+      this.props.stylePeriod
     ];
     if (
       marking.periods &&
@@ -105,14 +105,13 @@ class Day extends Component {
       containerStyle.push(this.style.today);
       textStyle.push(this.style.todayText);
     }
+    const baseDay = {
+      flex: 1,
+      alignItems: "center",
+      alignSelf: "stretch"
+    };
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          alignSelf: "stretch"
-        }}
-      >
+      <View style={[baseDay, this.props.styleDayPeriod]}>
         <TouchableOpacity style={containerStyle} onPress={this.onDayPress}>
           <Text allowFontScaling={false} style={textStyle}>
             {String(this.props.children)}
