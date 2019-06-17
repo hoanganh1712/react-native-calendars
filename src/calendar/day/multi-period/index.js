@@ -74,9 +74,23 @@ class Day extends Component {
           });
         }
         return (
-          <View key={index} style={style}>
-            <Text style={{ fontSize: 14 }}>
-              {period.startingDay ? period.bookingCode : null}
+          <View>
+            <View key={index} style={style}>
+              <Text
+                numberOfLines={1}
+                style={{ fontSize: 12, color: "#fff", fontWeight: "bold" }}
+              >
+                {period.startingDay ? period.bookingCode : null}
+              </Text>
+            </View>
+            <Text
+              numberOfLines={1}
+              style={{
+                fontSize: 12
+                // color: period.startingDay ? "#000" : "#fff"
+              }}
+            >
+              {period.tripCode}
             </Text>
           </View>
         );
