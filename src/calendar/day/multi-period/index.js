@@ -76,17 +76,18 @@ class Day extends Component {
         return (
           <View>
             <View key={index} style={style}>
-              <Text
+              {/* <Text
                 numberOfLines={1}
                 style={{ fontSize: 12, color: "#fff", fontWeight: "bold" }}
               >
                 {period.startingDay ? period.bookingCode : null}
-              </Text>
+              </Text> */}
             </View>
             <Text
               numberOfLines={1}
               style={{
-                fontSize: 12
+                fontSize: 12,
+                marginLeft: 4
                 // color: period.startingDay ? "#000" : "#fff"
               }}
             >

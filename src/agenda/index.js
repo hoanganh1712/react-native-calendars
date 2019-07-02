@@ -83,7 +83,9 @@ export default class AgendaView extends Component {
     refreshing: PropTypes.bool,
     // Display loading indicador. Default = false
     displayLoadingIndicator: PropTypes.bool,
-    renderChart: PropTypes.any
+    renderChart: PropTypes.any,
+    styleDayPeriod: PropTypes.any,
+    stylePeriod: PropTypes.any
   };
 
   constructor(props) {
@@ -450,6 +452,8 @@ export default class AgendaView extends Component {
               disabledByDefault={this.props.disabledByDefault}
               displayLoadingIndicator={this.props.displayLoadingIndicator}
               showWeekNumbers={this.props.showWeekNumbers}
+              styleDayPeriod={this.props.styleDayPeriod}
+              stylePeriod={this.props.stylePeriod}
             />
           </Animated.View>
           {knob}
