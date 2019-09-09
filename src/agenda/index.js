@@ -116,6 +116,7 @@ export default class AgendaView extends Component {
     this.state.scrollY.addListener(({ value }) => this.knobTracker.add(value));
   }
 
+
   calendarOffset() {
     return 90 - this.viewHeight / 2;
   }
@@ -219,7 +220,10 @@ export default class AgendaView extends Component {
     this._isMounted = false;
   }
 
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps(nextProps, props) {
+    if(nextProps.isChangeSelected !== this.props.isChangeSelected) {
+     this.chooseDay(nextProps.selected, !this.state.calendarScrollable);
+    }
     if (props.items) {
       this.setState({
         firstResevationLoad: false
@@ -334,6 +338,7 @@ export default class AgendaView extends Component {
   }
 
   render() {
+    const {height} = this.props;
     const agendaHeight = Math.max(0, this.viewHeight - HEADER_HEIGHT);
     const weekDaysNames = dateutils.weekDayNames(this.props.firstDay);
     const weekdaysStyle = [
@@ -367,7 +372,7 @@ export default class AgendaView extends Component {
 
     const contentTranslate = this.state.scrollY.interpolate({
       inputRange: [0, agendaHeight],
-      outputRange: [0, agendaHeight / 2],
+      outputRange: [0, (agendaHeight / 2) - height],
       extrapolate: "clamp"
     });
 
@@ -503,3 +508,7 @@ export default class AgendaView extends Component {
     );
   }
 }
+
+AgendaView.defaultProps = {
+  height: 0,
+};
